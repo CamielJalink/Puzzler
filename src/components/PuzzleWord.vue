@@ -8,7 +8,15 @@ const props = defineProps<{
 </script>
 
 <template>
-  <PuzzleChar v-for="char in props.word.word" :char="char" v-bind:key="char"></PuzzleChar>
+  <div class="word-wrapper">
+    <PuzzleChar v-for="char in props.word.word" :char="char" v-bind:key="char" :isTargetChar="true">
+    </PuzzleChar>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.word-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+</style>

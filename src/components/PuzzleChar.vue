@@ -1,12 +1,22 @@
 <!-- eslint-disable @typescript-eslint/no-unused-vars -->
 <script setup lang="ts">
 const props = defineProps<{
-  char: string
+  char: string,
+  isTargetChar: boolean,
 }>()
 </script>
 
 <template>
-  <input :value="char"></input>
+  <input :class="{ isTargetChar: isTargetChar}" class="char" :value="char"></input>
 </template>
 
-<style scoped></style>
+<style scoped>
+  .char {
+    width: 1rem;
+    text-align: center;
+  }
+
+  .isTargetChar {
+    background-color: hotpink !important;
+  }
+</style>

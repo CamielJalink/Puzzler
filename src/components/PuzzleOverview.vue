@@ -3,13 +3,22 @@ import PuzzleWord from '../components/PuzzleWord.vue'
 import type { Word } from '../types/Word.ts'
 
 const puzzle: Word[] = [
-  { word: 'kaas', puzzleChar: 2 },
-  { word: 'dropjes', puzzleChar: 5 },
+  { word: 'kaas', targetChar: 2 },
+  { word: 'dropjes', targetChar: 5 },
+  { word: 'chips', targetChar: 3 },
+  { word: 'bier', targetChar: 4 },
 ]
 </script>
 
 <template>
-  <PuzzleWord v-for="word in puzzle" v-bind:key="word.word" :word="word"></PuzzleWord>
+  <div class="puzzle-wrapper">
+    <PuzzleWord v-for="word in puzzle" v-bind:key="word.word" :word="word"></PuzzleWord>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.puzzle-wrapper {
+  display: block;
+  justify-self: center;
+}
+</style>
