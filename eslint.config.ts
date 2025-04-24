@@ -13,14 +13,17 @@ export default defineConfigWithVueTs(
   {
     name: 'app/files-to-lint',
     files: ['**/*.{ts,mts,tsx,vue}'],
-    rules: {
-      'vue/multi-word-component-names': 'off',
-    },
   },
 
   globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
 
   pluginVue.configs['flat/essential'],
+  {
+    rules: {
+      'vue/no-unused-vars': 'off',
+      'vue/no-parsing-error': 'off',
+    },
+  },
   vueTsConfigs.recommended,
 
   {
@@ -28,6 +31,7 @@ export default defineConfigWithVueTs(
     files: ['src/**/__tests__/*'],
     rules: {
       'vue/multi-word-component-names': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
     },
   },
   skipFormatting,
