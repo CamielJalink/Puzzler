@@ -1,18 +1,26 @@
 <script setup lang="ts">
 import PuzzleWord from '../components/PuzzleWord.vue'
-import type { Word } from '../types/Word.ts'
+import type { WordRow } from '../types/WordRow.ts'
+import findBoundaries from '@/helpers/BoundariesHelper.ts'
 
-const puzzle: Word[] = [
+const puzzle: WordRow[] = [
   { word: 'kaas', targetChar: 2 },
   { word: 'dropjes', targetChar: 5 },
   { word: 'chips', targetChar: 3 },
   { word: 'bier', targetChar: 4 },
 ]
+
+const boundaries = findBoundaries(puzzle)
 </script>
 
 <template>
   <div class="puzzle-wrapper">
-    <PuzzleWord v-for="word in puzzle" v-bind:key="word.word" :word="word"></PuzzleWord>
+    <PuzzleWord
+      v-for="wordRow in puzzle"
+      v-bind:key="wordRow.word"
+      :word="wordRow"
+      :boundaries="boundaries"
+    ></PuzzleWord>
   </div>
 </template>
 
