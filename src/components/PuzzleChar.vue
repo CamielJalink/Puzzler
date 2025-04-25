@@ -12,11 +12,12 @@ const props = defineProps<{
 
 <style scoped>
   .char {
-    width: 1rem;
+    box-sizing: border-box;
+    width: 30px;
     text-align: center;
   }
 
   .isTargetChar {
-    background-color: hotpink !important;
+    background-color: hotpink;
   }
 </style>
