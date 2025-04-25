@@ -4,10 +4,13 @@ import type { WordRow } from '../types/WordRow.ts'
 import findBoundaries from '@/helpers/BoundariesHelper.ts'
 
 const puzzle: WordRow[] = [
-  { word: 'kaas', targetChar: 2 },
-  { word: 'dropjes', targetChar: 5 },
-  { word: 'chips', targetChar: 1 },
-  { word: 'bier', targetChar: 3 },
+  { word: 'eten', targetChar: 0 },
+  { word: 'aap', targetChar: 1 },
+  { word: 'tomaten', targetChar: 4 },
+  { word: 'kaars', targetChar: 4 },
+  { word: 'honing', targetChar: 0 },
+  { word: 'schild', targetChar: 3 },
+  { word: 'frituur', targetChar: 3 },
 ]
 
 const boundaries = findBoundaries(puzzle)
